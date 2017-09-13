@@ -34,7 +34,7 @@ gulp.task('scss-lint', function() {
 });
 // Generate css & minify it
 gulp.task('sass', function () {
-  return gulp.src('../sass/*.scss')
+  return gulp.src(scssSrc)
     .pipe(sass().on('error', sass.logError))
     .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(gulp.dest(cssDst))
