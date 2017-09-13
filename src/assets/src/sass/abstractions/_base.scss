@@ -1,0 +1,40 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Base css of site
+ */
+
+* {
+  line-height: normal;
+  vertical-align: top;
+}
+
+body {
+  margin: 0;
+  font-family: $opensans-regular;
+}
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+video {
+  height: auto;
+  width: 100%;
+}
+ul.menu {
+  padding-left: 0;
+  list-style: none;
+}
+
+

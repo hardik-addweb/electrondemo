@@ -1,0 +1,218 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * login design
+ */
+
+.form-wrap {
+  display: inline-block;
+  height: 100vh;
+  width: 100%;
+  background-color: $grey-21;
+  .form-inner-wrap {
+    position: relative;
+    top: 50%;
+    display: block;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    background-size: 100% auto;
+    transform: translateY(-50%);
+    .my-history-breadcrumb {
+      display: inline-block;
+      width: 100%;
+      .breadcrumb {
+        margin-top: 0;
+        padding-left: 0;
+        background-color: transparent;
+        li {
+          display: inline-block;
+          list-style: none;
+          &:last-child {
+            &::after {
+              display: none;
+            }
+          }
+          &::after {
+            height: 20px;
+            width: 20px;
+            margin-left: 5px;
+            color: $white;
+            content: '>';
+          }
+          a {
+            display: inline-block;
+            color: $grey-cc;
+            text-decoration: none;
+          }
+        }
+        li.active {
+          color: $white;
+        }
+      }
+    }
+    .page-wrapper {
+      display: inline-block;
+      width: 100%;
+      .heading-border {
+        display: inline-block;
+        width: 100%;
+        background-color: $blue-24;
+        text-align: center;
+        h2 {
+          margin: 20px 0;
+          color: $white;
+          font-size: 40px;
+          font-family: $opensans-regular;
+        }
+        .page-heading-summary {
+          padding-bottom: 20px;
+          color: $white;
+        }
+      }
+      .sign-up-form-wrap {
+        display: inline-block;
+        width: 100%;
+        .sign-up-form {
+          display: inline-block;
+          width: 100%;
+          background-color: $white;
+          @include box-shadow(0 0 4px $white);
+          form {
+            padding: 25px;
+            .form-group {
+              position: relative;
+              display: inline-block;
+              width: 100%;
+              margin-bottom: 15px;
+              input[type='text'],
+              input[type='email'],
+              input[type='password'] {
+                /*width: 100%;*/
+                margin-left: 25px;
+                padding: 12px 0;
+                border: none;
+                border-bottom: 1px solid $grey-d7;
+                color: $black-41;
+                font-size: 14px;
+                @include border-radius(0);
+                @include box-shadow(none);
+                @include appearance(none);
+                @include calc('width', '100% - 25px');
+                &:hover,
+                &:focus {
+                  outline: none;
+                }
+              }
+              .alert {
+                margin-left: 15px;
+                padding: 7px 10px;
+                border: none;
+                background-color: $white;
+                color: $red;
+                font-size: 14px;
+              }
+            }
+            .input-pass,
+            .input-text,
+            .input-email {
+              &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                height: 20px;
+                width: 25px;
+                margin-top: 12px;
+                color: $grey-7C;
+                font-size: 16px;
+                font-family: fontawesome;
+                content: '\f007';
+                }
+              }
+              .input-pass {
+                &::before {
+                  content: '\f084';
+                }
+              }
+              .input-email {
+                &::before {
+                  content: '\f0e0';
+                }
+              }
+            .grey-checkbox {
+              display: inline-block;
+              width: 100%;
+              margin: 10px 0;
+              .remember-link {
+                display: inline-block;
+                width: auto;
+                .input-rc {
+                  display: inline-block;
+                  margin-top: 2px;
+                }
+              }
+              .forget-link {
+                float: right;
+                display: inline-block;
+                text-align: right;
+                a {
+                  color: $black-41;
+                  text-decoration: none;
+                }
+              }
+            }
+            .sign-up-btn-wrap {
+              display: inline-block;
+              width: 100%;
+              margin-top: 20px;
+              .signup-btn,
+              .cancel-btn {
+                display: inline-block;
+                padding: 10px 30px;
+                border: 1px solid $white;
+                background-color: $blue-3c;
+                color: $white;
+                font-size: 16px;
+                text-transform: uppercase;
+                text-decoration: none;
+                cursor: pointer;
+                @include border-radius(4px);
+                @include transition(.5s all ease 0s);
+                &:hover {
+                  border-color: $blue-3c;
+                  background-color: $white;
+                  color: $blue-3c;
+                  text-decoration: none;
+                }
+              }
+              .cancel-btn {
+                /*padding: 8px 30px;*/
+                background-color: $black;
+                &:hover {
+                  border-color: $black;
+                  background-color: $white;
+                  color: $black;
+                  text-decoration: none;
+                }
+              }
+            }
+            .alredy-member-wrap {
+              display: inline-block;
+              width: 100%;
+              margin: 10px 0;
+              span {
+                color: $black-41;
+                a {
+                  color: $blue-3c;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

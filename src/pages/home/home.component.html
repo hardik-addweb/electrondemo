@@ -1,10 +1,32 @@
-<!-- Sidebar -->
- <section>
-   <div class="inner">
-     <nav>
-       <ul>
-         <li><a [routerLink]="['/']">back</a></li>
-       </ul>
-     </nav>
-   </div>
- </section>
+<header>
+  <div class="header-wrap">
+    <a [routerLink]="['/']"> << Back</a>
+  </div>
+</header>
+
+<!-- Start Listing Page -->
+<div class="listing-wrap" *ngIf="allAppartmentdata">
+  <div class="listing-grid" *ngFor="let item of allAppartmentdata">
+    <div class="listing-left-wrap">
+      <div class="listing-image" *ngIf="item.pictures">
+        <img src="{{item.pictures}}">
+      </div>
+    </div>
+    <div class="listing-detail-wrap">
+      <div class="listing-deatil">
+        <div class="listing-name" *ngIf="item.node_title">
+          <h2>{{item.node_title}}</h2>
+        </div>
+        <div class="listing-price-text" *ngIf="item.purchasing_price">{{item.purchasing_price}}</div>
+      </div>
+      <div class="listing-serach-wrapper">
+        <p *ngIf="item.address_street">{{item.address_street}}</p>
+        <p *ngIf="item.address_city">{{item.address_city}}</p>
+        <p *ngIf="item.address_code">{{item.address_code}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Listing Page -->
+
+ <ng2-toasty [position]="toastyComponentPosition"></ng2-toasty>

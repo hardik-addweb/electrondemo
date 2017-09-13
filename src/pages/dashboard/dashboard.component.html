@@ -1,9 +1,44 @@
-<ul>
-<li><a href="javascript:void(0);" [routerLink]="['/login']">Sign In</a></li>
-<li><a href="javascript:void(0);" [routerLink]="['/register']">Sign Up</a></li>
+<!-- <ul>
+<li><a href="javascript:void(0);" [routerLink]="['/login']" *ngIf="!isLoggedin">Sign In</a></li>
+<li><a href="javascript:void(0);" [routerLink]="['/register']" *ngIf="!isLoggedin">Sign Up</a></li>
 <li><a href="javascript:void(0);" [routerLink]="['/home']">home</a></li>
 <li><a href="javascript:void(0);" (click)="logout()">Logout</a></li>
-</ul>
+</ul> -->
+
+<header>
+  <div class="header-wrap">
+    <a href="javascript:void(0);" [routerLink]="['/login']" *ngIf="!isLoggedin" tooltip="Sign in">Sign In</a>
+    <a href="javascript:void(0);" [routerLink]="['/register']" *ngIf="!isLoggedin" tooltip="Sign up">Sign Up</a>
+    <a href="javascript:void(0);" [routerLink]="['/home']" tooltip="Home">home</a>
+    <a href="javascript:void(0);" (click)="logout()" tooltip="Logout" [tooltipDisabled]="false"
+      [tooltipAnimation]="true"
+      tooltipPlacement="top">Logout</a>
+  </div>
+</header>
+
+<swiper [config]="configs">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+    <div class="swiper-slide">Slide 4</div>
+    <div class="swiper-slide">Slide 5</div>
+    <div class="swiper-slide">Slide 6</div>
+    <div class="swiper-slide">Slide 7</div>
+    <div class="swiper-slide">Slide 8</div>
+    <div class="swiper-slide">Slide 9</div>
+    <div class="swiper-slide">Slide 10</div>
+  </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</swiper>
+
+
+
+<!--
 <h1>Total Images: {{ imageStats().count }}</h1>
 <h1>Total Size: {{ imageStats().size | byteFormat}}</h1>
 <div
@@ -25,4 +60,4 @@
     <h4 class="media-heading">{{image.name}}</h4>
     <p>{{image.size | byteFormat}}</p>
   </div>
-</div>
+</div> -->

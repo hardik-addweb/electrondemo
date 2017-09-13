@@ -1,0 +1,25 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Header SCSS.
+ */
+
+.header-wrap {
+  display: inline-block;
+  width: 100%;
+  a {
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    background-color: $blue-24;
+    color: $white;
+    font-size: 20px;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
