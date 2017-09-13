@@ -10,7 +10,7 @@ var notify = require('gulp-notify');
  */
 var del = require('del');
 gulp.task('clean', function() {
-  // You can use multiple globbing patterns as you would with `gulp.src` 
+  // You can use multiple globbing patterns as you would with `gulp.src`
   return del(['build']);
 });
 /* End */
@@ -23,8 +23,8 @@ var scsslint   = require('gulp-scss-lint');
 var minifyCss  = require('gulp-minify-css');
 var sass       = require('gulp-sass');
 // Path
-var scssSrc    = '../assets/src/sass/**/*',
-    cssDst     = '../css';
+var scssSrc    = './src/assets/src/sass/**/*',
+    cssDst     = './src/assets/css';
 // Lint SCSS (For Ordering CSS property)
 gulp.task('scss-lint', function() {
   return gulp.src(scssSrc)
@@ -49,13 +49,13 @@ gulp.task('sass', function () {
 var coffee = require('gulp-coffee');
 var uglify = require('gulp-uglify');
 // Path
-var coffeeSrc    = '../coffee-scripts/**/*.coffee.js',
-    coffeeDst     = '../coffee-scripts';
-var jsSrc    = '../assets/src/js/**/*.js',
-    jsDst     = '../js';
+var coffeeSrc    = './src/assets/src/coffee-scripts/**/*.coffee.js',
+    coffeeDst     = './src/assets/js/coffee-scripts';
+var jsSrc    = './src/assets/src/js/**/*.js',
+    jsDst     = './src/assets/js';
 gulp.task('coffeescripts', ['clean'], function() {
-  // Minify and copy all JavaScript (except vendor scripts) 
-  // with sourcemaps all the way down 
+  // Minify and copy all JavaScript (except vendor scripts)
+  // with sourcemaps all the way down
   return gulp.src(coffeeSrc)
     .pipe(sourcemaps.init())
       .pipe(coffee())
@@ -82,12 +82,12 @@ gulp.task('scripts', ['clean'], function() {
  */
 var imagemin = require('gulp-imagemin');
 // Path
-var imgSrc    = '../assets/src/images/**/*',
-    imgDst     = '../images';
-// Copy all static images 
+var imgSrc    = './src/assets/src/images/**/*',
+    imgDst     = './src/assets/images';
+// Copy all static images
 gulp.task('images', ['clean'], function() {
   return gulp.src(imgSrc)
-    // Pass in options to the task 
+    // Pass in options to the task
     .pipe(imagemin({optimizationLevel: 10}))
     .pipe(gulp.dest(imgDst))
     .pipe(notify({message: 'Images compiled'}));
@@ -108,5 +108,5 @@ gulp.task('watch', function() {
 /* End */
 
 
-// The default task (called when you run `gulp` from cli) 
+// The default task (called when you run `gulp` from cli)
 gulp.task('default', ['watch', 'coffeescripts', 'scripts', 'sass', 'scss-lint']); // 'images',
